@@ -6,6 +6,8 @@
       <module fileurl="file://$PROJECT_DIR$/javaBK/javaBK.iml" filepath="$PROJECT_DIR$/javaBK/javaBK.iml" />
       <module fileurl="file://$PROJECT_DIR$/ss3_Array_Method/ss3_Array_Method.iml" filepath="$PROJECT_DIR$/ss3_Array_Method/ss3_Array_Method.iml" />
       <module fileurl="file://$PROJECT_DIR$/ss3_Method/ss3_Method.iml" filepath="$PROJECT_DIR$/ss3_Method/ss3_Method.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ss4_OOP/ss4_OOP.iml" filepath="$PROJECT_DIR$/ss4_OOP/ss4_OOP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ss5_AccessModifier/ss5_AccessModifier.iml" filepath="$PROJECT_DIR$/ss5_AccessModifier/ss5_AccessModifier.iml" />
     </modules>
   </component>
 </project>
