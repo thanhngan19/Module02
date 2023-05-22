@@ -19,16 +19,19 @@ public class ex2_Add_Array {
         int value = Integer.parseInt(scanner.nextLine());
         System.out.println("thêm vào vị trí index: ");
         int index = Integer.parseInt(scanner.nextLine());
+
+        int [] newArray = new int[n+1];
         for (int i=0; i< Array.length; i++){
-            if(i == index){
-                Array[i] = value;
-                for (int j= i; j< Array.length; j++) {
-                    Array[j + 1] = Array[j];
-                    System.out.print(Array[j+1]+ " ");
-                }
-            } else if(i!= index) {
-                System.out.print(Array[i]+ " ");
+            if(i == index ){
+                 newArray[index] = value;
+                 for(int j =index; j<Array.length; j++){
+                     newArray[j+1]=Array[j];
+                 }
+            }
+             else if(i!= index) {
+                newArray[i]=Array[i];
             }
         }
+        System.out.print("Array after add element: "+ Arrays.toString(newArray));
     }
 }
