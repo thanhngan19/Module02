@@ -8,6 +8,8 @@
       <module fileurl="file://$PROJECT_DIR$/ss3_Method/ss3_Method.iml" filepath="$PROJECT_DIR$/ss3_Method/ss3_Method.iml" />
       <module fileurl="file://$PROJECT_DIR$/ss4_OOP/ss4_OOP.iml" filepath="$PROJECT_DIR$/ss4_OOP/ss4_OOP.iml" />
       <module fileurl="file://$PROJECT_DIR$/ss5_AccessModifier/ss5_AccessModifier.iml" filepath="$PROJECT_DIR$/ss5_AccessModifier/ss5_AccessModifier.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ss6/ss6.iml" filepath="$PROJECT_DIR$/ss6/ss6.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ss7_Interface/ss7_Interface.iml" filepath="$PROJECT_DIR$/ss7_Interface/ss7_Interface.iml" />
     </modules>
   </component>
 </project>
