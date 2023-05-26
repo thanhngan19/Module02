@@ -2,14 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/MVC/MVC.iml" filepath="$PROJECT_DIR$/MVC/MVC.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Module02.iml" filepath="$PROJECT_DIR$/.idea/Module02.iml" />
-      <module fileurl="file://$PROJECT_DIR$/javaBK/javaBK.iml" filepath="$PROJECT_DIR$/javaBK/javaBK.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ss3_Array_Method/ss3_Array_Method.iml" filepath="$PROJECT_DIR$/ss3_Array_Method/ss3_Array_Method.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ss3_Method/ss3_Method.iml" filepath="$PROJECT_DIR$/ss3_Method/ss3_Method.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ss4_OOP/ss4_OOP.iml" filepath="$PROJECT_DIR$/ss4_OOP/ss4_OOP.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ss5_AccessModifier/ss5_AccessModifier.iml" filepath="$PROJECT_DIR$/ss5_AccessModifier/ss5_AccessModifier.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ss6/ss6.iml" filepath="$PROJECT_DIR$/ss6/ss6.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ss7_Interface/ss7_Interface.iml" filepath="$PROJECT_DIR$/ss7_Interface/ss7_Interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SS1/SS1.iml" filepath="$PROJECT_DIR$/SS1/SS1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo/demo.iml" filepath="$PROJECT_DIR$/demo/demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SS1/ex/ex.iml" filepath="$PROJECT_DIR$/SS1/ex/ex.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SS1/practise/practise.iml" filepath="$PROJECT_DIR$/SS1/practise/practise.iml" />
     </modules>
   </component>
 </project>

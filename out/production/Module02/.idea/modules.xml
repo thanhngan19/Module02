@@ -3,8 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Module02.iml" filepath="$PROJECT_DIR$/.idea/Module02.iml" />
-      <module fileurl="file://$PROJECT_DIR$/javaBK/javaBK.iml" filepath="$PROJECT_DIR$/javaBK/javaBK.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ss3_Array_Method/ss3_Array_Method.iml" filepath="$PROJECT_DIR$/ss3_Array_Method/ss3_Array_Method.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SS1/SS1.iml" filepath="$PROJECT_DIR$/SS1/SS1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo/demo.iml" filepath="$PROJECT_DIR$/demo/demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SS1/ex/ex.iml" filepath="$PROJECT_DIR$/SS1/ex/ex.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SS1/practise/practise.iml" filepath="$PROJECT_DIR$/SS1/practise/practise.iml" />
     </modules>
   </component>
 </project>
