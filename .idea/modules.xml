@@ -2,12 +2,28 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/CRUD_nonMVC/CRUD.iml" filepath="$PROJECT_DIR$/CRUD_nonMVC/CRUD.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Collection/Collection.iml" filepath="$PROJECT_DIR$/Collection/Collection.iml" />
       <module fileurl="file://$PROJECT_DIR$/MVC/MVC.iml" filepath="$PROJECT_DIR$/MVC/MVC.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Module02.iml" filepath="$PROJECT_DIR$/.idea/Module02.iml" />
       <module fileurl="file://$PROJECT_DIR$/SS1/SS1.iml" filepath="$PROJECT_DIR$/SS1/SS1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ss5_AccessModifier/Static/Static.iml" filepath="$PROJECT_DIR$/ss5_AccessModifier/Static/Static.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ss9_MVC/controller/controller.iml" filepath="$PROJECT_DIR$/ss9_MVC/controller/controller.iml" />
       <module fileurl="file://$PROJECT_DIR$/demo/demo.iml" filepath="$PROJECT_DIR$/demo/demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/SS1/ex/ex.iml" filepath="$PROJECT_DIR$/SS1/ex/ex.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ss5_AccessModifier/ex1_AM/ex1_AM.iml" filepath="$PROJECT_DIR$/ss5_AccessModifier/ex1_AM/ex1_AM.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ss5_AccessModifier/ex1_AccessModifier/ex1_AccessModifier.iml" filepath="$PROJECT_DIR$/ss5_AccessModifier/ex1_AccessModifier/ex1_AccessModifier.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ss9_MVC/model/model.iml" filepath="$PROJECT_DIR$/ss9_MVC/model/model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ss8/mvc_crud/mvc_crud.iml" filepath="$PROJECT_DIR$/ss8/mvc_crud/mvc_crud.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pbl3/pbl3.iml" filepath="$PROJECT_DIR$/pbl3/pbl3.iml" />
       <module fileurl="file://$PROJECT_DIR$/SS1/practise/practise.iml" filepath="$PROJECT_DIR$/SS1/practise/practise.iml" />
+      <module fileurl="file://$PROJECT_DIR$/qltv/qltv.iml" filepath="$PROJECT_DIR$/qltv/qltv.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ss9_MVC/reposity/reposity.iml" filepath="$PROJECT_DIR$/ss9_MVC/reposity/reposity.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ss9_MVC/service/service.iml" filepath="$PROJECT_DIR$/ss9_MVC/service/service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ss5_AccessModifier/ss5_AccessModifier.iml" filepath="$PROJECT_DIR$/ss5_AccessModifier/ss5_AccessModifier.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ss8/ss8.iml" filepath="$PROJECT_DIR$/ss8/ss8.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ss9_MVC/ss9_MVC.iml" filepath="$PROJECT_DIR$/ss9_MVC/ss9_MVC.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ss9_MVC/view/view.iml" filepath="$PROJECT_DIR$/ss9_MVC/view/view.iml" />
     </modules>
   </component>
 </project>
