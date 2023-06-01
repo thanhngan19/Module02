@@ -1,12 +1,13 @@
-package ss9_MVC.controller;
+package MVC_1.controller;
 
-import ss9_MVC.service.IStudentService;
-import ss9_MVC.service.StudentService;
+import MVC_1.repository.StudentRepository;
+import MVC_1.service.IStudentService;
+import MVC_1.service.StudentService;
 
 import java.util.Scanner;
 
 public class StudentController {
-    private IStudentService iStudentService = new StudentService();
+    IStudentService iStudentService= new StudentService();
     public void displayMenu() {
         Scanner scanner = new Scanner(System.in);
         int choose;
@@ -17,13 +18,12 @@ public class StudentController {
             System.out.println("3. Sửa");
             System.out.println("4. Xóa");
             System.out.println("5. Nhấn số bất kỳ khác trên để thoát");
-
             System.out.println("Mời cưng chọn chức năng: ");
             choose = Integer.parseInt(scanner.nextLine());
 
             switch (choose) {
                 case 1:
-//                    addStudent(scanner);
+                    iStudentService.Add();
                     break;
                 case 2:
                     iStudentService.display();
@@ -34,9 +34,9 @@ public class StudentController {
                     break;
                 case 4:
                     System.out.println("Bạn đang chọn chức năng Xóa");
-                    iStudentService.DeInfo();
+                    iStudentService.Delete();
             }
         } while (choose >= 1 && choose <= 4);
     }
-}
 
+}

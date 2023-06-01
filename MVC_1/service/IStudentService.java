@@ -1,8 +1,8 @@
-package ss9_MVC.service;
+package MVC_1.service;
 
 public interface IStudentService {
     void display();
     void FixInfo();
-    void DeInfo();
-
+    void Delete();
+    void Add();
 }

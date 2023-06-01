@@ -1,4 +1,4 @@
-package ss9_MVC.model;
+package MVC_1.model;
 
 public class Student {
     private int id; // biến toàn cục, biến đối tượng
@@ -14,12 +14,8 @@ public class Student {
         return name;
     }
 
-    public String setName(String name) {
+    public void setName(String name) {
         this.name = name;
-        return name;
-    }
-
-    public Student() {
     }
 
     public double getScore() {
@@ -50,6 +46,8 @@ public class Student {
         int a = 2; // biến cục bộ
     }
 
+
+
     @Override
     public String toString() {
         return "Student{" +
@@ -59,4 +57,3 @@ public class Student {
                 '}';
     }
 }
-
