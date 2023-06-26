@@ -11,7 +11,6 @@ public class Clear_arrList {
         arrList.add("java");
         System.out.println(arrList);
         System.out.println(arrList.size());
-        arrList.clear();
-        System.out.println(arrList);
+       arrList.get(2);
     }
 }

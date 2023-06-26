@@ -13,6 +13,8 @@ public class ArrList_Doi_Tuong {
         students.add(student2);
         students.add(student3);
         students.add(student4);
+        students.get(2).setName("Ngân");
+
         for (Student oo : students){
             System.out.println(oo);
         }

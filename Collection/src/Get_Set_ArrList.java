@@ -11,6 +11,7 @@ public class Get_Set_ArrList {
         System.out.println(arr.get(3));
         arr.set(3,"mỳ");// set gái trị
         System.out.println(arr);
+        System.out.println(arr.get(2));
 
     }
 }

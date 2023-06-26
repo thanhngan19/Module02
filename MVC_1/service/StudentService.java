@@ -7,7 +7,7 @@ import MVC_1.repository.StudentRepository;
 
 import java.util.Scanner;
 
-public class StudentService implements IStudentService {
+public class  StudentService implements IStudentService {
     static IStudentRepository studentRepository= new StudentRepository();
     static Student [] students = studentRepository.findAll();
     static Scanner scanner = new Scanner(System.in);
