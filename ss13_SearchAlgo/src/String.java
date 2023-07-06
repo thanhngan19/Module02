@@ -17,7 +17,7 @@ public class String {
         }
         for(Character ch: max){
             System.out.println(ch);
-        },
+        }
 
     }
 }

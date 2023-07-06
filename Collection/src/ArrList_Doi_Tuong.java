@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class ArrList_Doi_Tuong {
     public static void main(String[] args) {
@@ -14,9 +15,31 @@ public class ArrList_Doi_Tuong {
         students.add(student3);
         students.add(student4);
         students.get(2).setName("Ngân");
-
-        for (Student oo : students){
-            System.out.println(oo);
+        System.out.println("Input: ");
+        Scanner sc = new Scanner(System.in);
+        int id= Integer.parseInt(sc.nextLine());
+        for(Student ch: students){
+            if(ch.getId()== id){
+                break;
+            }
         }
+
+
+//        while(true){
+//            System.out.println("Input id");
+//            Scanner sc = new Scanner(System.in);
+//            id = Integer.parseInt(sc.nextLine());
+//            if(id>=students.size()){
+//                System.out.println("Nhập lại !!");
+//            }else{
+//                break;
+//            }
+//        }
+//        for(Student ch : students ){
+//            if(ch.getId()== id){
+//                System.out.println(ch);
+//            }
+//        }
+
     }
 }

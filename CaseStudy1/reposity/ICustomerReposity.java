@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 
 public interface ICustomerReposity {
+
     LinkedList<Customer> findAll();
     int getSize();
+    LinkedList<Customer> readFromFile(LinkedList<Customer>demo1);
 }

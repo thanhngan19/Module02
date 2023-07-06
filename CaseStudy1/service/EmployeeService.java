@@ -1,159 +1,261 @@
 package CaseStudy1.service;
 
+import CaseStudy1.Exception.NotFoundEmployeeException;
+import CaseStudy1.ValidateData.ValidateDate;
+import CaseStudy1.ValidateData.ValidateEmail;
+import CaseStudy1.ValidateData.ValidateGetID;
+import CaseStudy1.ValidateData.ValidateSDT;
 import CaseStudy1.model.Employee;
 import CaseStudy1.reposity.EmployeeReposity;
 import CaseStudy1.reposity.IEmployeeReposity;
 
-import java.text.DateFormat;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Date;
 import java.util.regex.Pattern;
+//import Exception.NotFoundEmployeeException;
+
+
 
 public class EmployeeService implements IEmployeeService {
 
-    static String path = "CaseStudy1/data/Employee.csv";
     static Scanner scanner = new Scanner(System.in);
     static IEmployeeReposity employeereposity = new EmployeeReposity();
-    static  ArrayList<Employee> employee = employeereposity.findAll();
+    static ArrayList<Employee> employee = employeereposity.findAll();
 
+    @Override
     public void display() {
         for (Employee ch : employee) {
             System.out.println(ch);
         }
     }
-
     @Override
     public void add() {
-        System.out.println("Họ tên");
-        String nameIn = scanner.nextLine();
-        String gender1 = Gender();
-        String strDate1 = Date();
-        String CMND = CMND();
-        String SDT1 = SDT();
-        String email1 = Email();
-        String hv = TD();
-        String VT = VT();
-        System.out.println("Nhập vào lương: ");
-        double salarynew = Double.parseDouble(scanner.nextLine());
-        Employee employeenew = new Employee(employeereposity.getSize()+ 1,nameIn, strDate1, gender1, CMND, SDT1, email1, VT, hv, salarynew);
-        employee.add(employeenew);
-        ArrayList<Employee> employeeadd = employeereposity.readFromFile(employee, path);
-        for(Employee ch: employeeadd)            {
-                System.out.println(ch);
-          }
+        int n;
+        while (true) {
+            try {
+                System.out.println("Nhập vào số lượng employee muốn thêm vào file: ");
+                n = Integer.parseInt(scanner.nextLine());
+                break;
+            } catch (NumberFormatException e) {
+                System.out.println("sai định dạng format số !!!");
+            }
         }
-
-        @Override
-        public void fixInfor() {
-            System.out.println("Nhập vào id employee muốn sửa : ");
-            int idFixx = Integer.parseInt(scanner.nextLine());
-            int choose;
-            do {
-                System.out.println("Nhập thông tin muốn sửa!!");
-                System.out.println("1.Name");
-                System.out.println("2. Ngày sinh");
-            System.out.println("3.Giới tính");
+        int count = 0;
+        do {
+            System.out.println("Họ tên");
+            String nameIn = scanner.nextLine();
+            String gender1 = Gender();
+            LocalDate strDate1 = ValidateDate.Date();
+            String CMND = CMND();
+            String SDT1 = ValidateSDT.SDT(employee);
+            String email1 = ValidateEmail.Email();
+            String hv = TD();
+            String VT = VT();
+            System.out.println("Nhập vào lương: ");
+            double salarynew = Double.parseDouble(scanner.nextLine());
+            Employee employeenew = new Employee((employee.get(employeereposity.getSize() - 1).getMnv()) + 1, nameIn, strDate1, gender1, CMND, SDT1, email1, VT, hv, salarynew);
+            employee.add(employeenew);
+            ArrayList<Employee> employeeadd = employeereposity.writeFile(employee);
+            for (Employee ch : employeeadd) {
+                System.out.println(ch);
+            }
+            count++;
+        } while (count < n);
+    }
+    @Override
+    public void fixInfor()  {
+        int choose;
+        int idFixx;
+        while(true) {
+            try {
+                System.out.println("Input id of employee which u want to edit");
+                idFixx= ValidateGetID.getId(employee);
+                break;
+            } catch (NotFoundEmployeeException e) {
+                System.out.println("Not found id which you want to find !! Input once again");
+            }
+        }
+        do {
+            System.out.println("Input infor which u need to fix!!");
+            System.out.println("1.Name");
+            System.out.println("2. Date of birth");
+            System.out.println("3.Gender");
             System.out.println("4.CMND");
-            System.out.println("5.Số điẹn thoại");
+            System.out.println("5.Phone number");
             System.out.println("6.Email");
-            System.out.println("7.Trình độ");
+            System.out.println("7.Education level");
             System.out.println("8.Vị trí");
-            System.out.println("9.Lương");
-            System.out.println("10.Dừng");
+            System.out.println("9.Salary");
+            System.out.println("10.Exit");
             choose = Integer.parseInt(scanner.nextLine());
             switch (choose) {
-                case 1:
+                case 1 -> {
                     System.out.println("input new name: ");
                     String newName = scanner.nextLine();
-                    employee.get(idFixx).setName(newName);
-                    break;
-                case 2:
+                    ArrayList<Employee> employees = new ArrayList<Employee>();
+                    for (Employee ch : employee) {
+                        if (ch.getMnv() == idFixx) {
+                            ch.setName(newName);
+                            employees = employeereposity.writeFile(employee);
+                        }
+                    }
+                    System.out.println("List sau khi sửa");
+                    for (Employee ch : employees) {
+                        System.out.println(ch);
+                    }
+                }
+                case 2 -> {
                     System.out.println("Input new date!!");
-                    String strDate1 = Date();
-                    employee.get(idFixx).setDate(strDate1);
-                    break;
-                case 3:
+                    LocalDate strDate12 = ValidateDate.Date();
+                    ArrayList<Employee> employeedate = new ArrayList<Employee>();
+                    for (Employee ch : employee) {
+                        ch.setDate(strDate12);
+                        employeedate = employeereposity.writeFile(employee);
+                    }
+                    for (Employee ch : employeedate) {
+                        System.out.println(ch);
+                    }
+                }
+                case 3 -> {
                     System.out.println("Input gender!!");
                     String gender = Gender();
-                    employee.get(idFixx).setDate(gender);
-                    break;
-                case 4:
+                    ArrayList<Employee> employeegender = new ArrayList<Employee>();
+                    for (Employee ch : employee) {
+                        ch.setGender(gender);
+                        employeegender = employeereposity.writeFile(employee);
+                    }
+                    for (Employee ch : employeegender) {
+                        System.out.println(ch);
+                    }
+                }
+                case 4 -> {
                     System.out.println("CMND");
                     String cmnd = CMND();
-                    employee.get(idFixx).setCMND(cmnd);
-                    break;
-                case 5:
+                    ArrayList<Employee> employeecmnd = new ArrayList<>();
+                    for (Employee ch : employee) {
+                        ch.setCMND(cmnd);
+                        employeecmnd = employeereposity.writeFile(employee);
+                    }
+                    for (Employee ch : employeecmnd) {
+                        System.out.println(ch);
+                    }
+                }
+                case 5 -> {
                     System.out.println("input phone!!!");
-                    String newPhone = SDT();
-                    employee.get(idFixx).setSDT(newPhone);
-                    break;
-                case 6:
+                    String newPhone = ValidateSDT.SDT(employee);
+                    ArrayList<Employee> employeephone = new ArrayList<>();
+                    for (Employee ch : employee) {
+                        ch.setSDT(newPhone);
+                        employeephone = employeereposity.writeFile(employee);
+                    }
+                    for (Employee ch : employeephone) {
+                        System.out.println(ch);
+                    }
+                }
+                case 6 -> {
                     System.out.println("input email!!");
-                    String email = Email();
-                    employee.get(idFixx).setEmail(email);
-                    break;
-                case 7:
+                    String email = ValidateEmail.Email();
+                    ArrayList<Employee> employeeemail = new ArrayList<>();
+                    for (Employee ch : employee) {
+                        ch.setEmail(email);
+                        employeeemail = employeereposity.writeFile(employee);
+                    }
+                    for (Employee ch : employeeemail) {
+                        System.out.println(ch);
+                    }
+                }
+                case 7 -> {
                     System.out.println("trình độ!!");
                     String td = TD();
-                    employee.get(idFixx).setHv(td);
-                    break;
-                case 8:
+                    ArrayList<Employee> employeetd = new ArrayList<Employee>();
+                    for (Employee ch : employee) {
+                        ch.setHv(td);
+                        employeetd = employeereposity.writeFile(employee);
+                    }
+                    for (Employee ch : employeetd) {
+                        System.out.println(ch);
+                    }
+                }
+                case 8 -> {
                     System.out.println("vị trí !!");
                     String vt = VT();
-                    employee.get(idFixx).setVitri(vt);
-                    break;
-                case 9:
+                    ArrayList<Employee> employeevt = new ArrayList<Employee>();
+                    for (Employee ch : employee) {
+                        ch.setVitri(vt);
+                        employeevt = employeereposity.writeFile(employee);
+                    }
+                    for (Employee ch : employeevt) {
+                        System.out.println(ch);
+                    }
+                }
+                case 9 -> {
                     System.out.println("Nhập lương : ");
                     String salary = scanner.nextLine();
-                    employee.get(idFixx).setName(salary);
-                    break;
-                case 10:
-                    System.out.println("Danh sách sửa !!");
+                    ArrayList<Employee> employeesalary = new ArrayList<Employee>();
+                    for (Employee ch : employee) {
+                        ch.setName(salary);
+                        employeesalary = employeereposity.writeFile(employee);
+                    }
+                    for (Employee ch : employeesalary) {
+                        System.out.println(ch);
+                    }
+                }
+                case 10 -> System.out.println("Danh sách sửa !!");
             }
 
         } while (choose >= 1 && choose < 10);
 
     }
 
-    public static boolean hopLe(int day, int month, int year) {
-        int[] max = {0, 31, 28, 31, 30, 31, 31, 30, 31, 30, 31, 30, 31};
-        if (day > max[month] && month != 2) {
-            return false;
+    @Override
+    public void DeleteEmployee() {
+        int idDelete;
+        while(true){
+        try {
+            System.out.println("Input id which you want to delete: ");
+            idDelete = ValidateGetID.getId(employee);
+            break;
+        } catch (NotFoundEmployeeException e) {
+            System.out.println("Not found id which you want to find !! Input once again");
         }
-        if (month > 12) {
-            return false;
         }
-        if (month == 2) {
-            if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
-                if (day <= 29) {
-                    return true;
-                } else {
-                    System.out.println("Năm nhuận nên tháng 2 có 29 ngày !!");
-                    return false;
-                }
-            } else {
-                if (day <= 28) {
-                    return true;
-                } else {
-                    System.out.println("Năm không nhuận nên tháng 2 chỉ có 28 ngày !!");
-                    return false;
-                }
+
+        employee.remove(idDelete - 1);
+        ArrayList<Employee> Deleted = employeereposity.writeFile(employee);
+    }
+
+    @Override
+    public void FindEmployee() {
+        int idFind;
+        while(true){
+            try {
+                System.out.println("Input id which you want to find: ");
+                idFind = ValidateGetID.getId(employee);
+                break;
+            } catch (NotFoundEmployeeException e) {
+                System.out.println("Not found id which you want to find !! Input once again");
             }
-        } else {
-            return true;
+        }
+        for (Employee ch : employee) {
+            if (ch.getMnv() == idFind) {
+                System.out.println("employee là : " + ch);
+            }
         }
     }
+
 
     public static String CMND() {
         String CMND;
         while (true) {
             System.out.println("Nhập vào CMND: ");
             CMND = scanner.nextLine();
-            String mp = "^[0-9]{10}$";
+            String mp = "^[0-9]{9,10}$";
             if (Pattern.matches(mp, CMND)) {
                 return CMND;
             } else {
@@ -162,33 +264,9 @@ public class EmployeeService implements IEmployeeService {
         }
     }
 
-    public static String SDT() {
-        String SDT1;
-        while (true) {
-            System.out.println("Nhập vào số điện thoại: ");
-            SDT1 = scanner.nextLine();
-            String mp = "^09\\d{8}$";
-            if (Pattern.matches(mp, SDT1)) {
-                return SDT1;
-            } else {
-                System.out.println("Số điện thoại không hợp lệ!");
-            }
-        }
-    }
 
-    public static String Email() {
-        String email1;
-        while (true) {
-            System.out.println("Nhập vào email: ");
-            email1 = scanner.nextLine();
-            String mp = "^[a-zA-Z][a-zA-Z0-9]+@gmail.com";
-            if (Pattern.matches(mp, email1)) {
-                return email1;
-            } else {
-                System.out.println("email không hợp lệ !!");
-            }
-        }
-    }
+
+
 
     public static String TD() {
         String hv1 = "Trung cấp";
@@ -227,53 +305,14 @@ public class EmployeeService implements IEmployeeService {
         }
     }
 
-    public static String Date() {
-        Date date1;
-        String strDate1;
-        while (true) {
-            System.out.println("Nhap ngay: ");
-            int day = Integer.parseInt(scanner.nextLine());
-            int month;
-            while (true) {
-                System.out.println("Nhap tháng: ");
-                month = Integer.parseInt(scanner.nextLine());
-                if (month < 12) {
-                    break;
-                } else {
-                    System.out.println("tháng k hợp lệ!!");
-                }
-            }
-            int year;
-            while (true) {
-                System.out.println("Nhap năm: ");
-                year = Integer.parseInt(scanner.nextLine());
-                if (year < 2023) {
-                    break;
-                } else {
-                    System.out.println("tháng không hợp lệ!!");
-                }
-            }
-            if (hopLe(day, month, year)) {
-                date1 = new Date(day, month, year);
-                SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-                strDate1 = formatter.format(date1);
-                System.out.println(strDate1);
-                return strDate1;
-            } else {
-                System.out.println("ngày k hợp lệ");
-            }
-
-        }
-
-    }
 
     public static String Gender() {
         String gender1;
-        while(true){
+        while (true) {
             System.out.println("Nhập vào giới tính: ");
             gender1 = scanner.nextLine();
 
-            if (gender1.equals("nam")|| gender1.equals("nữ")) {
+            if (gender1.equals("nam") || gender1.equals("nữ")) {
                 return gender1;
 
             } else {

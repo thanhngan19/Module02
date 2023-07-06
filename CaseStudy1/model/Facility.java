@@ -7,6 +7,7 @@ public class Facility {
     int maxPeople;
     String kt;
 
+
     public Facility(String name, double area, int total, int maxPeople, String kt) {
         this.name = name;
         Area = area;
@@ -57,4 +58,6 @@ public class Facility {
     public void setKt(String kt) {
         this.kt = kt;
     }
+
+
 }

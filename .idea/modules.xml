@@ -5,13 +5,17 @@
       <module fileurl="file://$PROJECT_DIR$/CRUD_nonMVC/CRUD.iml" filepath="$PROJECT_DIR$/CRUD_nonMVC/CRUD.iml" />
       <module fileurl="file://$PROJECT_DIR$/CaseStudy/CaseStudy.iml" filepath="$PROJECT_DIR$/CaseStudy/CaseStudy.iml" />
       <module fileurl="file://$PROJECT_DIR$/Collection/Collection.iml" filepath="$PROJECT_DIR$/Collection/Collection.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Comparable_Comparator/Comparable_Comparator.iml" filepath="$PROJECT_DIR$/Comparable_Comparator/Comparable_Comparator.iml" />
       <module fileurl="file://$PROJECT_DIR$/CaseStudy/Controller/Controller.iml" filepath="$PROJECT_DIR$/CaseStudy/Controller/Controller.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Comparable_Comparator/Demo/Demo.iml" filepath="$PROJECT_DIR$/Comparable_Comparator/Demo/Demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/Employee1/Employee1.iml" filepath="$PROJECT_DIR$/Employee1/Employee1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ReadWriteEmployee/Exception/Exception.iml" filepath="$PROJECT_DIR$/ReadWriteEmployee/Exception/Exception.iml" />
       <module fileurl="file://$PROJECT_DIR$/InputOutFile/InputOutFile.iml" filepath="$PROJECT_DIR$/InputOutFile/InputOutFile.iml" />
       <module fileurl="file://$PROJECT_DIR$/MVC/MVC.iml" filepath="$PROJECT_DIR$/MVC/MVC.iml" />
       <module fileurl="file://$PROJECT_DIR$/MVC1/MVC1.iml" filepath="$PROJECT_DIR$/MVC1/MVC1.iml" />
       <module fileurl="file://$PROJECT_DIR$/CaseStudy/Model/Model.iml" filepath="$PROJECT_DIR$/CaseStudy/Model/Model.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Module02.iml" filepath="$PROJECT_DIR$/.idea/Module02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ReadWriteEmployee/ReadWriteEmployee.iml" filepath="$PROJECT_DIR$/ReadWriteEmployee/ReadWriteEmployee.iml" />
       <module fileurl="file://$PROJECT_DIR$/CaseStudy/Repository/Repository.iml" filepath="$PROJECT_DIR$/CaseStudy/Repository/Repository.iml" />
       <module fileurl="file://$PROJECT_DIR$/SS1/SS1.iml" filepath="$PROJECT_DIR$/SS1/SS1.iml" />
       <module fileurl="file://$PROJECT_DIR$/CaseStudy/Service/Service.iml" filepath="$PROJECT_DIR$/CaseStudy/Service/Service.iml" />
@@ -35,6 +39,7 @@
       <module fileurl="file://$PROJECT_DIR$/ss11_Stack_Queue/exercise/exercise.iml" filepath="$PROJECT_DIR$/ss11_Stack_Queue/exercise/exercise.iml" />
       <module fileurl="file://$PROJECT_DIR$/ss12_Collection_Framework/src/exercise1/exercise1.iml" filepath="$PROJECT_DIR$/ss12_Collection_Framework/src/exercise1/exercise1.iml" />
       <module fileurl="file://$PROJECT_DIR$/ss11_Stack_Queue/exercise/exercise3/exercise3.iml" filepath="$PROJECT_DIR$/ss11_Stack_Queue/exercise/exercise3/exercise3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo/hashCode/hashCode.iml" filepath="$PROJECT_DIR$/demo/hashCode/hashCode.iml" />
       <module fileurl="file://$PROJECT_DIR$/ss9_MVC/model/model.iml" filepath="$PROJECT_DIR$/ss9_MVC/model/model.iml" />
       <module fileurl="file://$PROJECT_DIR$/ss8/mvc_crud/mvc_crud.iml" filepath="$PROJECT_DIR$/ss8/mvc_crud/mvc_crud.iml" />
       <module fileurl="file://$PROJECT_DIR$/InputOutFile/outt/outt.iml" filepath="$PROJECT_DIR$/InputOutFile/outt/outt.iml" />
@@ -54,6 +59,7 @@
       <module fileurl="file://$PROJECT_DIR$/ss5_AccessModifier/ss5_AccessModifier.iml" filepath="$PROJECT_DIR$/ss5_AccessModifier/ss5_AccessModifier.iml" />
       <module fileurl="file://$PROJECT_DIR$/ss8/ss8.iml" filepath="$PROJECT_DIR$/ss8/ss8.iml" />
       <module fileurl="file://$PROJECT_DIR$/ss9_MVC/ss9_MVC.iml" filepath="$PROJECT_DIR$/ss9_MVC/ss9_MVC.iml" />
+      <module fileurl="file://$PROJECT_DIR$/test/test.iml" filepath="$PROJECT_DIR$/test/test.iml" />
       <module fileurl="file://$PROJECT_DIR$/ss9_MVC/view/view.iml" filepath="$PROJECT_DIR$/ss9_MVC/view/view.iml" />
     </modules>
   </component>

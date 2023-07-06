@@ -1,53 +1,20 @@
 package CaseStudy1.reposity;
 
-import CaseStudy1.model.House;
-import CaseStudy1.model.Room;
-import CaseStudy1.model.Villa;
+import CaseStudy1.model.*;
+import CaseStudy1.until.FacilityReadFile;
+import CaseStudy1.until.FacilityWriteFile;
 
 import java.util.LinkedHashMap;
 
 public class FacilityReposity implements IFacilityReposity{
+    String path_house ="E:\\New Volume\\codegym\\Module02\\CaseStudy1\\data\\House.csv";
     static LinkedHashMap <Villa,Integer>villa = new LinkedHashMap<>();
-    static LinkedHashMap <House,Integer>house = new LinkedHashMap<>();
+    static LinkedHashMap <House, count>house = new LinkedHashMap<>();
     static LinkedHashMap <Room,Integer>room = new LinkedHashMap<>();
     static int sizeVilla;
     static int sizeRoom;
     static int sizeHouse;
-    static{
-        Villa villa1 = new Villa("Villa", 300,10000,3,"năm","3 sao",300,2);
-        Villa villa2 = new Villa("Villa", 300,10000,3,"năm","3 sao",300,2);
-        Villa villa3 =new Villa("Villa", 300,10000,3,"năm","3 sao",300,2);
-        Villa villa4 = new Villa("Villa", 300,10000,3,"năm","3 sao",300,2);
-        Villa villa5 = new Villa("Villa", 300,10000,3,"năm","3 sao",300,2);
-        villa.put(villa1, 2);
-        villa.put(villa2, 3);
-        villa.put(villa3, 1);
-        villa.put(villa4, 4);
-        villa.put(villa5, 5);
-        sizeVilla= villa.size();
-        House house1= new House("House",300,10000,3,"năm","2 sao",2);
-        House house2= new House("House",300,10000,3,"năm","2 sao",2);
-        House house3= new House("House",300,10000,3,"năm","2 sao",2);;
-        House house4= new House("House",300,10000,3,"năm","2 sao",2);
-        House house5= new House("House",300,10000,3,"năm","2 sao",2);
-        house.put(house1,2);
-        house.put(house2,2);
-        house.put(house3,2);
-        house.put(house4,2);
-        house.put(house5,2);
-        sizeHouse= house.size();
-        Room room1= new Room("Room", 500, 100000, 5, "Tháng","free nước");
-        Room room2= new Room("Room", 500, 100000, 5, "Tháng","free nước");
-        Room room3= new Room("Room", 500, 100000, 5, "Tháng","free nước");
-        Room room4= new Room("Room", 500, 100000, 5, "Tháng","free nước");
-        Room room5= new Room("Room", 500, 100000, 5, "Tháng","free nước");
-        room.put(room1,2);
-        room.put(room2,2);
-        room.put(room3,2);
-        room.put(room4,2);
-        room.put(room5,2);
-      sizeRoom= room.size();
-}
+
 
     @Override
     public LinkedHashMap<Villa, Integer> findAllVilla() {
@@ -60,8 +27,11 @@ public class FacilityReposity implements IFacilityReposity{
     }
 
     @Override
-    public LinkedHashMap<House, Integer> findAllHouse() {
-        return house;
+    public LinkedHashMap<count,House> findAllHouse() {
+        return FacilityReadFile.ReadFile(path_house);
+    }
+    public LinkedHashMap<count,House> readFromFile(LinkedHashMap<count,House> demo) {
+        return FacilityWriteFile.WriteFile(demo);
     }
 
     @Override

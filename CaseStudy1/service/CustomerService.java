@@ -13,7 +13,7 @@ import java.util.regex.Pattern;
 public class CustomerService implements ICustomerService{
     static Scanner scanner = new Scanner(System.in) ;
     static ICustomerReposity customerservice= new CustomerReposity();
-    LinkedList<Customer> customer= customerservice.findAll();
+    static LinkedList<Customer> customer= customerservice.findAll();
     @Override
     public void display() {
       for(Customer ch: customer){
@@ -35,6 +35,10 @@ public class CustomerService implements ICustomerService{
         String dc= scanner.nextLine();
         Customer customer6= new Customer(customerservice.getSize()+1, newName, newDate, newGender, CMND, sdt, email, lkh, dc);
         customer.add(customer6);
+        LinkedList<Customer> lk =customerservice.readFromFile(customer);
+        for(Object chan: lk){
+            System.out.println(chan);
+        }
     }
 
     @Override
@@ -58,41 +62,74 @@ public class CustomerService implements ICustomerService{
                     System.out.println("input new name: ");
                     String newName = scanner.nextLine();
                     customer.get(idFixx).setName(newName);
+                    LinkedList<Customer> customerID = customerservice.readFromFile(customer);
+                    for (Customer ch : customerID) {
+                        System.out.println(ch);
+                    }
                     break;
                 case 2:
                     System.out.println("Input new date!!");
                     String strDate1 = Date();
                     customer.get(idFixx).setDate(strDate1);
+                    LinkedList<Customer> customerDate = customerservice.readFromFile(customer);
+                    for (Customer ch : customerDate) {
+                        System.out.println(ch);
+                    }
                     break;
                 case 3:
                     System.out.println("Input gender!!");
                     String gender = Gender();
                     customer.get(idFixx).setDate(gender);
+                    LinkedList<Customer> customerGender = customerservice.readFromFile(customer);
+                    for (Customer ch : customerGender) {
+                        System.out.println(ch);
+                    }
                     break;
                 case 4:
                     System.out.println("CMND");
                     String cmnd = CMND();
                     customer.get(idFixx).setCMND(cmnd);
+                    LinkedList<Customer> customercmnd = customerservice.readFromFile(customer);
+                    for (Customer ch : customercmnd) {
+                        System.out.println(ch);
+                    }
+
                     break;
                 case 5:
                     System.out.println("input phone!!!");
                     String newPhone = SDT();
                     customer.get(idFixx).setSDT(newPhone);
+                    LinkedList<Customer> customerPhone = customerservice.readFromFile(customer);
+                    for (Customer ch : customerPhone) {
+                        System.out.println(ch);
+                    }
                     break;
                 case 6:
                     System.out.println("input email!!");
                     String email = Email();
                     customer.get(idFixx).setEmail(email);
+                    LinkedList<Customer> customerEmail = customerservice.readFromFile(customer);
+                    for (Customer ch : customerEmail) {
+                        System.out.println(ch);
+                    }
                     break;
                 case 7:
                     System.out.println("Loại khách hàng!!");
                     String lkh = LKH();
                     customer.get(idFixx).setLKH(lkh);
+                    LinkedList<Customer> customerlkh = customerservice.readFromFile(customer);
+                    for (Customer ch : customerlkh) {
+                        System.out.println(ch);
+                    }
                     break;
                 case 8:
                     System.out.println("vị trí : ");
                     String dc = scanner.nextLine();
                     customer.get(idFixx).setDC(dc);
+                    LinkedList<Customer> customervitri = customerservice.readFromFile(customer);
+                    for (Customer ch : customervitri) {
+                        System.out.println(ch);
+                    }
                     break;
             }
 
@@ -199,7 +236,7 @@ public class CustomerService implements ICustomerService{
         while (true) {
             System.out.println("Nhập vào số điện thoại: ");
             SDT1 = scanner.nextLine();
-            String mp = "^09[0-9]{9,10}$";
+            String mp = "^09\\d{8}$";
             if (Pattern.matches(mp, SDT1)) {
                 return SDT1;
             } else {

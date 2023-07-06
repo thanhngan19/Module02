@@ -1,9 +1,12 @@
 package CaseStudy1.model;
 import java.io.Serializable;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 public class Employee implements Serializable{
    private int maNhanVien;
     private String name;
-    private String date;
+    private LocalDate date;
     private String gender;
     private String CMND;
     private String SDT;
@@ -15,7 +18,7 @@ public class Employee implements Serializable{
     public Employee() {
     }
 
-    public Employee(int mnv, String name, String date, String gender, String CMND, String SDT, String email, String vitri, String hv, double salary) {
+    public Employee(int mnv, String name, LocalDate date, String gender, String CMND, String SDT, String email, String vitri, String hv, double salary) {
         this.maNhanVien = mnv;
         this.name = name;
         this.date = date;
@@ -44,11 +47,11 @@ public class Employee implements Serializable{
         this.name = name;
     }
 
-    public String getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 
@@ -110,10 +113,11 @@ public class Employee implements Serializable{
 
     @Override
     public String toString() {
+        DateTimeFormatter formatter1 = DateTimeFormatter.ofPattern("[dd/MM/yyyy]");
         return "Employee{" +
                 "mnv=" + maNhanVien +
                 ", name='" + name + '\'' +
-                ", date=" + date +
+                ", date=" + formatter1.format(date) +
                 ", gender='" + gender + '\'' +
                 ", CMND='" + CMND + '\'' +
                 ", SDT='" + SDT + '\'' +

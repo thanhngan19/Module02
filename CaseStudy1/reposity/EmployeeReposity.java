@@ -7,19 +7,19 @@ import CaseStudy1.until.EmployeeWriteFile;
 import java.util.ArrayList;
 
 public class EmployeeReposity implements IEmployeeReposity {
-    static String path= "CaseStudy1/data/Employee.csv";
+    static ArrayList<Employee> employee = new ArrayList<Employee>();
+
     static int size;
     public ArrayList<Employee> findAll() {
-        return  EmployeeReadFile.ReadFile(path);
+        return  employee= EmployeeReadFile.ReadFile();
     }
-
     @Override
     public int getSize() {
-        return size;
+        return employee.size();
     }
     @Override
-    public ArrayList<Employee> readFromFile(ArrayList<Employee>demo, String path) {
-        return EmployeeWriteFile.WriteFile(demo,path);
+    public ArrayList<Employee> writeFile(ArrayList<Employee>demo) {
+        return EmployeeWriteFile.WriteFile(demo);
     }
 
 }

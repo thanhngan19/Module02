@@ -1,0 +1,101 @@
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
+import java.util.Scanner;
+
+public class validatedate {
+    public static boolean hopLe(int day, int month, int year) {
+        int[] max = {0, 31, 28, 31, 30, 31, 31, 30, 31, 30, 31, 30, 31};
+        if (day > max[month] && month != 2) {
+            return false;
+        }
+        if (month > 12 || month<1) {
+            System.out.println("tháng lớn hơn 0 và nhỏ hơn 12");
+            return false;
+        }
+        if(year>2023){
+            System.out.println("năm nhỏ hơn 2023");
+
+            return false;
+        }
+
+        if (month == 2) {
+            if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+                if (day <= 29) {
+                    return true;
+                } else {
+                    System.out.println("Năm nhuận nên tháng 2 có 29 ngày !!");
+                    return false;
+                }
+            } else {
+                if (day <= 28) {
+                    return true;
+                } else {
+                    System.out.println("Năm không nhuận nên tháng 2 chỉ có 28 ngày !!");
+                    return false;
+                }
+            }
+        }
+        else {
+            return true;
+        }
+    }
+    public static LocalDate Date() {
+        Scanner scanner = new Scanner(System.in);
+       LocalDate startDate  ;
+        int day;
+        int month;
+        int year;
+        String dateNew;
+        while (true) {
+            while (true) {
+                try {
+                    System.out.println("Nhập ngày:");
+                    dateNew = scanner.nextLine();
+                    DateTimeFormatter formatter1 = DateTimeFormatter.ofPattern("[dd/MM/yyyy][d/M/yyyy]");
+                    startDate = LocalDate.parse(dateNew, formatter1);
+                    System.out.println(formatter1.format(startDate));
+                    LocalDate now = LocalDate.now();
+                    System.out.println(now);
+                    try {
+                        if (startDate.isAfter(now)) {
+                            System.out.println("Ngay nhap lớn hơn ngày hiện tại ");
+                        } else {
+                            break;
+                        }
+                    } catch (Exception e) {
+                        System.out.println("Error");
+                    }
+                } catch (Exception e) {
+                    System.out.println("Sai format!!!");
+                }
+            }
+            while (true) {
+                LocalDate now = LocalDate.now();
+                if (startDate.isAfter(now)) {
+                    break;
+                } else {
+                    System.out.println("Ngay nhap sai");
+                }
+            }
+            String[] strings = dateNew.split("/");
+            day = Integer.parseInt(strings[0]);
+            month = Integer.parseInt(strings[1]);
+            year = Integer.parseInt(strings[2]);
+
+            if (hopLe(day, month, year)) {
+                return startDate;
+            }
+        }
+
+
+    }
+
+
+    public static void main(String[] args) {
+        LocalDate test = Date();
+        System.out.println(test);
+    }}
+
+

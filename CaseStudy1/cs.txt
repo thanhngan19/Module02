@@ -1,0 +1,5 @@
+ngày trả lớn ngày mượn!
+ngày nhập phải nhỏ hơn ngày hiện tại trên máy
+menu format số//
+contrat khi hết booking //
+ghi hai employee vào file.
